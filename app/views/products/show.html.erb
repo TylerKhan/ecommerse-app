@@ -1,0 +1,16 @@
+<h1><%= @product.name %></h1>
+<%= image_tag("#{@product.image_url}", id: "picture") %>
+<h3>price: $<%= @product.price %></h3>
+
+
+
+<%= link_to("Edit Product", "/products/#{@product.id}/edit")%>
+<%= link_to("Delete Product", "/products/#{@product.id}", method: :delete) %>
+
+<%= form_tag("/carted_products", method: :post) do %>
+  <%= label_tag(:amount, "Enter amount you want to buy:") %>
+  <%= number_field_tag(:amount) %>
+  <%= hidden_field_tag(:product_id, @product.id) %>
+  <br>
+  <%= submit_tag("Add to cart!") %>
+<% end %>

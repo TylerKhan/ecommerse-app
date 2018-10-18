@@ -1,0 +1,8 @@
+<h1>index</h1>
+
+<% @products.each do |product| %>
+<h2><%= product.name %></h2>
+<p><%= product.description %></p>
+<p><%= image_tag(product.image_url) if product.image_url != nil %></p>
+  <%= link_to("More details", "products/#{product.id}") %>
+<% end %>

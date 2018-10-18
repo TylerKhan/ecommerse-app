@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CommerseApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+  <body>
+    <li><%= link_to("All Products", "products") %></li>
+    <li><%= link_to("Add New Product", "/Products/new") %></li>
+    <li><%= link_to("Cart", "/carted_products") %></li>
+    <li><%= link_to("Orders", "/orders") %></li>
+
+
+    <%= yield %>
+  </body>
+</html>

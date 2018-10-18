@@ -1,0 +1,27 @@
+<h1>Create a new product.</h1>
+
+<%= form_tag("/products", method: :post) do %>
+ <!--  <label for="name"> Enter Name:</label>
+  <input tyoe="text" id="name" name="price">
+  <br>
+
+
+  <textarea name="description"></textarea>
+  <input typer=number" name="price">
+  <input type="text" name="image_url">
+  <input type="submit" value="Create Product"> -->
+  <%= label_tag(:name, "Enter name:") %>
+  <%= text_field_tag(:name) %>
+  <br>
+  <%= label_tag(:description, "Enter description:") %>
+  <%= text_area_tag(:description, "", placeholder:"Enter a description:") %>
+  <br>
+  <%= label_tag(:price, "Enter price:") %>
+  <%= number_field_tag(:price) %>
+  <br>
+  <%= label_tag(:image_url, "Enter image_url:") %>
+  <%= text_field_tag(:image_url) %>
+  <br>
+  <%= submit_tag("Create new product!") %>
+
+<% end %>
