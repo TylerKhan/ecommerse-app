@@ -5,8 +5,9 @@
 
 
 <%= link_to("Edit Product", "/products/#{@product.id}/edit")%>
+<br>
 <%= link_to("Delete Product", "/products/#{@product.id}", method: :delete) %>
-
+<br>
 <%= form_tag("/carted_products", method: :post) do %>
   <%= label_tag(:amount, "Enter amount you want to buy:") %>
   <%= number_field_tag(:amount) %>

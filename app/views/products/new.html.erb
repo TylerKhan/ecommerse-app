@@ -13,6 +13,10 @@
   <%= label_tag(:name, "Enter name:") %>
   <%= text_field_tag(:name) %>
   <br>
+  <%= label_tag(:category_id, "Select a catagory")%>
+  <br>
+  <%= select_tag(:category_id, options_from_collection_for_select(@categories, :id, :name)) %>
+  <br>
   <%= label_tag(:description, "Enter description:") %>
   <%= text_area_tag(:description, "", placeholder:"Enter a description:") %>
   <br>

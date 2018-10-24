@@ -1,4 +1,16 @@
 <h1>index</h1>
+<%= form_tag("/products", method: :get) do %>
+  <input type="text" name="category">
+  <input type="submit" value="Search for a category!">
+  <% end %>
+
+  <% if @category_name %>
+      <p>Displaying <%= @products.length %> result(s)</p>
+    <% elsif @error_message %>
+      <p><%= @error_message %></p>
+  <% end %>
+
+
 
 <% @products.each do |product| %>
 <h2><%= product.name %></h2>
